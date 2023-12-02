@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     $if(description)$
-    <meta name="description" content="$description$" />
+    <meta name="description" content="$description$">
     $endif$
     <title>simplistic.hr - $title$</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script defer src="/js/fontawesome.min.js"></script>
     <!-- Matomo -->
-    <script src="https://simplistic.hr/js/analytics.js"></script>
+    <script src="/js/analytics.js"></script>
     <script src="https://analytics.marijan.pro/matomo.js" async defer></script>
     <!-- End Matomo Code -->
   </head>
@@ -26,7 +26,7 @@
                 class="h-12"
                 src="/images/simplistic-logo.svg"
                 alt="simplistic.hr"
-              />
+              >
               Simplistic
             </a>
             <ul class="menu menu-horizontal px-1">
@@ -62,7 +62,10 @@
         </nav>
       </header>
       <main>
-        <div class="m-auto px-1">$body$</div>
+        <div class="m-auto px-1">
+          <!-- -->
+          $body$
+        </div>
       </main>
       <div class="divider"></div>
       <footer class="footer footer-center bg-base-100">
