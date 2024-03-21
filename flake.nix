@@ -9,6 +9,7 @@
     npmlock2nix.url = "github:nix-community/npmlock2nix";
     npmlock2nix.flake = false;
     website-builder.url = "git+https://git.sr.ht/~marijan/website-builder";
+    #website-builder.url = "path:/home/marijan/workspace/website-builder";
   };
 
   outputs = inputs@{ self, flake-parts, treefmt-nix, ... }:
