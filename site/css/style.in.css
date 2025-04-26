@@ -1,0 +1,15 @@
+@import "tailwindcss" source("..");
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dim --prefersdark;
+}
+
+.icon {
+  height: 1em;
+  fill: currentColor;
+}
+.navbar-start {
+  width: 75%;
+}

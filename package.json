@@ -1,7 +1,8 @@
 {
   "name": "website",
   "dependencies": {
-    "daisyui": "4.7.3",
-    "@tailwindcss/typography": "0.5.10"
+    "@tailwindcss/typography": "0.5.16",
+    "daisyui": "5.0.28",
+    "tailwindcss": "4.1.4"
   }
 }

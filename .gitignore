@@ -1,4 +1,4 @@
-*_cache
-*result
+.envrc
 .direnv
-node_modules
+build
+result
