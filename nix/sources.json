@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8a2f738d9d1f1d986b5a4cd2fd2061a7127237d7",
-        "sha256": "0fls8p72hjk8zvqw49kfrf2l3ayvpi8sm3zpd5d8l4m2ic4irz5h",
+        "rev": "c043004d1c6985732bcc1cbc5a9c9aecbbb4e0f0",
+        "sha256": "061x1hflyz80rfmzs3vp4kaf29i8qdsw8pasczyyabn7dd7j61pd",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/8a2f738d9d1f1d986b5a4cd2fd2061a7127237d7.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/c043004d1c6985732bcc1cbc5a9c9aecbbb4e0f0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "npmlock2nix": {
@@ -17,10 +17,22 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "npmlock2nix",
-        "rev": "9197bbf397d76059a76310523d45df10d2e4ca81",
-        "sha256": "1ddfby72fsnpn4yw43g4zxvg6jzlk5hi5cfnnccg9jgw53ckr4xh",
+        "rev": "4d9060afbaa5f57ee0b8ef11c7044ed287a7d302",
+        "sha256": "1cba2vpqwj8bq3vs7vb0dbp88n6g6qh2fimw3jywksfy94xaifsk",
         "type": "tarball",
-        "url": "https://github.com/nix-community/npmlock2nix/archive/9197bbf397d76059a76310523d45df10d2e4ca81.tar.gz",
+        "url": "https://github.com/nix-community/npmlock2nix/archive/4d9060afbaa5f57ee0b8ef11c7044ed287a7d302.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "treefmt-nix": {
+        "branch": "main",
+        "description": "treefmt-nix",
+        "homepage": "",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
+        "sha256": "1y27garxygghyyawzczrrg0n4brj36jdh82c2isd5b1b4narw37x",
+        "type": "tarball",
+        "url": "https://github.com/numtide/treefmt-nix/archive/27b3b12a8e6375f28ebe122f07d230ca5459bbfa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

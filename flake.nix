@@ -2,66 +2,50 @@
   description = "simplistic's website";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/8a2f738d9d1f1d986b5a4cd2fd2061a7127237d7";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    npmlock2nix.url = "github:nix-community/npmlock2nix/9197bbf397d76059a76310523d45df10d2e4ca81";
+    nixpkgs.url = "github:NixOS/nixpkgs/c043004d1c6985732bcc1cbc5a9c9aecbbb4e0f0";
+    treefmt-nix.url = "github:numtide/treefmt-nix/27b3b12a8e6375f28ebe122f07d230ca5459bbfa";
+    treefmt-nix.flake = false;
+    npmlock2nix.url = "github:nix-community/npmlock2nix/4d9060afbaa5f57ee0b8ef11c7044ed287a7d302";
     npmlock2nix.flake = false;
   };
 
-  outputs =
-    inputs@{ flake-parts, treefmt-nix, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      imports = [
-        treefmt-nix.flakeModule
-      ];
-      flake = {
-        overlays.default = import ./overlay.nix;
+  outputs = { self, nixpkgs, npmlock2nix, treefmt-nix, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          (final: prev: {
+            nodejs-16_x = final.nodejs;
+            npmlock2nix = pkgs.callPackage npmlock2nix { };
+            treefmt-nix = import treefmt-nix;
+          })
+          (import ./overlay.nix)
+        ];
       };
-      perSystem =
-        {
-          system,
-          self',
-          pkgs,
-          lib,
-          ...
-        }:
-        {
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = [
-              (final: prev: {
-                nodejs-16_x = final.nodejs;
-                npmlock2nix = pkgs.callPackage inputs.npmlock2nix { };
-              })
-              (import ./overlay.nix)
-            ];
-            config = { };
-          };
-          treefmt = {
-            projectRootFile = ".git/config";
-            programs.nixfmt-rfc-style.enable = true;
-          };
+      treefmtEval = pkgs.treefmt-nix.evalModule pkgs {
+        projectRootFile = "flake.nix";
+        programs.nixfmt.enable = true;
+      };
+    in
+    {
+      overlays.default = import ./overlay.nix;
 
-          apps.gh-deploy = {
-            type = "app";
-            program = "${lib.getExe (
-              pkgs.writeShellApplication {
-                name = "gh-deploy";
-                runtimeInputs = [ pkgs.coreutils ];
-                text = ''
-                  cp --no-preserve=mode -r ${self'.packages.dist}/* docs
-                '';
-              }
-            )}";
-          };
+      packages.${system} = {
+        inherit (pkgs) dist;
+        default = self.packages.${system}.dist;
+      };
 
-          packages = {
-            inherit (pkgs) dist;
-            default = self'.packages.dist;
-          };
-        };
+      apps.${system}.gh-deploy = {
+        type = "app";
+        program = "${pkgs.lib.getExe pkgs.gh-deploy}";
+      };
+
+      formatter.${system} = treefmtEval.config.build.wrapper;
+
+      checks.${system} = {
+        formatting-check = treefmtEval.config.build.check ./.;
+        dist = self.packages.${system}.dist;
+      };
     };
 }
