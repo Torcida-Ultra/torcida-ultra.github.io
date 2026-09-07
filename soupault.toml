@@ -60,6 +60,10 @@
   site_author_email = "andrija@simplistic.hr"
   site_title = "simplistic"
   site_icon = "https://simplistic.hr/images/favicon.ico"
+  site_social_image = "https://simplistic.hr/images/simplistic-logo.svg"
+
+[index.fields.title]
+  selector = [ "h1#title", "h1" ]
 
 [widgets.atom]
   widget = "atom"
@@ -67,6 +71,12 @@
   feed_file = "feed.atom"
   use_section = "/"
   template = "templates/feed.atom"
+
+[widgets.sitemap]
+  widget = "sitemap"
+  page = "index.html"
+  use_section = "/"
+  template = "templates/sitemap.xml"
 
 [widgets.post-title]
   widget = "title"
@@ -86,3 +96,10 @@ section = "posts"
 
 [widgets.add-meta-description]
 widget = "add-meta-description"
+
+[widgets.extract-canonical]
+widget = "extract-canonical"
+
+[widgets.add-social-metadata]
+widget = "add-social-metadata"
+after = ["post-title", "add-meta-description", "extract-canonical"]
