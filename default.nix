@@ -24,6 +24,7 @@ runCommand "dist"
   {
     LANG = "en_US.UTF-8";
     nativeBuildInputs = [
+      nodejs
       soupault
       tailwindcss_4
     ];
@@ -34,6 +35,8 @@ runCommand "dist"
     cp -r ${./site} site
     cp -r ${./templates} templates
     cp -r ${./plugins} plugins
+    cp -r ${./tests} tests
+    node --test tests/*.test.js
     echo "Running soupault ..."
     soupault --debug --config ${./soupault.toml}
 
@@ -47,6 +50,8 @@ runCommand "dist"
 
     chmod -R +w build/css/node_modules
     rm -r build/css/node_modules
+
+    find build -type f \( -name '*.html' -o -name '*.xml' \) -exec sed -i 's/[[:space:]]\+$//' {} +
 
     mkdir -p $out
     cp -r build/* $out/

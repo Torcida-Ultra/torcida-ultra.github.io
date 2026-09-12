@@ -1,5 +1,8 @@
 {
   "name": "website",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
   "dependencies": {
     "@tailwindcss/typography": "0.5.20",
     "daisyui": "5.7.28",

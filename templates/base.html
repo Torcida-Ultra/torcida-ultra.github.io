@@ -14,103 +14,147 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="preload" href="/images/icons.svg" as="image" type="image/svg+xml">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" >
-    <!-- Matomo -->
-    <script src="/js/analytics.js"></script>
-    <script src="https://analytics.marijan.pro/matomo.js" async defer></script>
-    <!-- End Matomo Code -->
+    <script
+      src="/js/analytics.js"
+      data-site-id="2"
+      data-matomo-url="https://analytics.marijan.pro/"
+      data-consent-key="analyticsConsent"
+      data-consent-version="1"
+      data-consent-expiry-days="180"
+      defer
+    ></script>
     <script src="/js/theme-state.js"></script>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="robots" content="noai, noimageai">
   </head>
-    <body>
-      <header class="bg-base-100">
-        <div class="max-w-2xl m-auto">
-          <nav class="navbar">
-            <div class="navbar-start">
-              <a class="btn btn-ghost normal-case text-xl" href="/">
+    <body class="min-h-screen bg-base-100 text-base-content">
+      <a class="skip-link" href="#content">Preskoči na sadržaj</a>
+      <header class="site-header bg-base-100/95">
+        <div class="mx-auto max-w-6xl px-3 sm:px-6">
+          <nav class="navbar min-h-20 px-0" aria-label="Glavna navigacija">
+            <div class="navbar-start gap-1">
+              <details class="dropdown lg:hidden">
+                <summary class="btn btn-ghost btn-square list-none" aria-label="Otvori navigaciju">
+                  <svg class="icon text-xl" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                  </svg>
+                </summary>
+                <ul class="menu dropdown-content z-20 mt-3 w-52 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg">
+                  <li><a href="/">Usluge</a></li>
+                  <li><a href="/starlink/">Starlink</a></li>
+                  <li><a href="/about/">O nama</a></li>
+                </ul>
+              </details>
+              <a class="btn btn-ghost gap-2 px-2 text-lg normal-case sm:text-xl" href="/" aria-label="Simplistic - naslovnica">
                 <img
-                  class="h-12"
+                  class="h-11 w-11 object-contain"
                   src="/images/simplistic-logo.svg"
-                  alt="simplistic.hr"
+                  alt=""
+                  width="44"
+                  height="44"
                 >
                 Simplistic
               </a>
-              <ul class="menu menu-horizontal">
-                <li><a href="/about/">O nama</a></li>
+              <ul class="menu menu-horizontal hidden px-1 lg:flex">
+                <li><a href="/">Usluge</a></li>
                 <li><a href="/starlink/">Starlink</a></li>
+                <li><a href="/about/">O nama</a></li>
               </ul>
             </div>
-            <div class="navbar-end">
-              <div>
-                <!-- external links -->
-                <ul class="menu menu-horizontal text-xl">
-                  <li>
-                    <label class="swap swap-rotate">
-                      <!-- this hidden checkbox controls the state -->
-                      <input id="themeController" onclick="saveThemeState()" type="checkbox" class="theme-controller" value="light" />
-                      <svg class="swap-on icon" viewBox="0 0 24 24">
-                        <use href="/images/icons.svg#moon"></use>
-                      </svg>
-                      <svg class="swap-off icon" viewBox="0 0 24 24">
-                        <use href="/images/icons.svg#sun"></use>
-                      </svg>
-                    </label>
-                  </li>
-                </ul>
-              </div>
+            <div class="navbar-end gap-2">
+              <a class="btn btn-primary btn-sm hidden sm:inline-flex" href="https://wa.me/385953895875">
+                Pošaljite upit
+              </a>
+              <label class="swap swap-rotate btn btn-ghost btn-square" title="Promijeni temu">
+                <span class="sr-only">Promijeni svijetlu i tamnu temu</span>
+                <input id="themeController" onclick="saveThemeState()" type="checkbox" class="theme-controller" value="light" aria-label="Promijeni temu" />
+                <svg class="swap-on icon text-xl" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="/images/icons.svg#moon"></use>
+                </svg>
+                <svg class="swap-off icon text-xl" viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="/images/icons.svg#sun"></use>
+                </svg>
+              </label>
             </div>
           </nav>
         </div>
       </header>
-      <main>
-        <div class="max-w-prose m-auto">
-          <div id="content" class="pt-4 px-4 md:px-0">
+      <main class="min-h-[60vh]">
+        <div class="mx-auto max-w-6xl">
+          <div id="content" class="px-4 py-8 sm:px-6 sm:py-12">
           </div>
         </div>
       </main>
-      <div class="max-w-2xl m-auto">
-        <div class="divider"></div>
-      </div>
-      <footer
-        class="footer sm:footer-horizontal bg-base-100 max-w-2xl m-auto px-4 mb-4"
-      >
-        <aside>
-          <p>
-            Copyright © 2023-2025 -<br />
-            All right reserved by Simplistic d.o.o.
-          </p>
-        </aside>
-        <nav>
-          <h6 class="footer-title">Kontaktirajte nas:</h6>
-          <a href="https://wa.me/385953895875" class="link link-hover">
-            <svg class="icon w-5 h-5 inline-block align-text-bottom" viewBox="0 0 24 24">
-              <use href="/images/icons.svg#whatsapp"></use>
-            </svg>
-            Napišite nam poruku!
-          </a>
-          <a href="tel:+385953895875" class="link link-hover">
-            <svg class="icon w-5 h-5 inline-block align-text-bottom" viewBox="0 0 24 24">
-              <use href="/images/icons.svg#phone"></use>
-            </svg>
-            +385 95 389 5875
-          </a>
-          <a href="mailto:andrija@simplistic.hr?subject=Upit&body=Poruka" class="link link-hover">
-            <svg class="icon w-5 h-5 inline-block align-text-bottom" viewBox="0 0 24 24">
-              <use href="/images/icons.svg#envelope"></use>
-            </svg>
-            andrija@simplistic.hr
-          </a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Društvene mreže:</h6>
-          <a href="https://www.instagram.com/simplistic_split/" class="link link-hover">
-            <svg class="icon w-5 h-5 inline-block align-text-bottom" viewBox="0 0 24 24">
-              <use href="/images/icons.svg#instagram"></use>
-            </svg>
-            Sljiedite nam!
-          </a>
-        </nav>
+      <footer class="border-t border-base-300 bg-base-200/50">
+        <div class="footer mx-auto max-w-6xl px-4 py-10 sm:footer-horizontal sm:px-6">
+          <aside class="max-w-xs">
+            <a class="flex items-center gap-3 text-lg font-bold" href="/">
+              <img class="h-10 w-10 object-contain" src="/images/simplistic-logo.svg" alt="" width="40" height="40">
+              Simplistic d.o.o.
+            </a>
+            <p>Građevinski i instalaterski radovi na području Splita i okolice.</p>
+            <p class="text-sm opacity-70">© 2023-2026 Simplistic d.o.o. Sva prava pridržana.</p>
+          </aside>
+          <nav>
+            <h2 class="footer-title">Kontakt</h2>
+            <a href="https://wa.me/385953895875" class="btn btn-primary btn-sm">
+              <svg class="icon text-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/images/icons.svg#whatsapp"></use>
+              </svg>
+              Pošaljite poruku
+            </a>
+            <a href="mailto:andrija@simplistic.hr?subject=Upit&body=Poruka" class="link link-hover inline-flex items-center gap-2">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/images/icons.svg#envelope"></use>
+              </svg>
+              andrija@simplistic.hr
+            </a>
+            <a href="tel:+385953895875" class="link link-hover inline-flex items-center gap-2 text-sm opacity-75">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/images/icons.svg#phone"></use>
+              </svg>
+              +385 95 389 5875
+            </a>
+          </nav>
+          <nav>
+            <h2 class="footer-title">Pratite naš rad</h2>
+            <a href="https://www.instagram.com/simplistic_split/" class="link link-hover inline-flex items-center gap-2">
+              <svg class="icon text-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <use href="/images/icons.svg#instagram"></use>
+              </svg>
+              Instagram
+            </a>
+          </nav>
+          <nav>
+            <h2 class="footer-title">Informacije</h2>
+            <a href="/privatnost/" class="link link-hover">Privatnost i kolačići</a>
+            <a href="/pravne-informacije/" class="link link-hover">Pravne informacije i prigovori</a>
+            <button type="button" class="link link-hover text-left" data-analytics-consent-open>Postavke kolačića</button>
+          </nav>
+        </div>
       </footer>
+      <section
+        class="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-box border border-base-300 bg-base-100 p-5 shadow-2xl sm:inset-x-6 sm:p-6"
+        data-analytics-consent
+        role="region"
+        aria-labelledby="analytics-consent-title"
+        aria-describedby="analytics-consent-description"
+        aria-live="polite"
+        hidden
+      >
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-xl">
+            <h2 id="analytics-consent-title" class="text-lg font-bold">Analitički kolačići</h2>
+            <p id="analytics-consent-description" class="mt-2 text-sm leading-relaxed opacity-80">
+              Smijemo li koristiti analitičke kolačiće kako bismo vidjeli kako se stranica koristi?
+              <a class="link" href="/privatnost/">Više informacija</a>.
+            </p>
+          </div>
+          <div class="flex shrink-0 flex-wrap gap-2">
+            <button type="button" class="btn btn-neutral btn-sm" data-analytics-consent-action="rejected">Ne, hvala</button>
+            <button type="button" class="btn btn-primary btn-sm" data-analytics-consent-action="accepted">Dopusti analitiku</button>
+          </div>
+        </div>
+      </section>
   </body>
 </html>
