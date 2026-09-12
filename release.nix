@@ -3,6 +3,7 @@ let
   pkgs = import sources.nixpkgs {
     overlays = [
       (final: prev: {
+        # Legacy npmlock2nix argument name; use nixpkgs' current Node LTS.
         nodejs-16_x = final.nodejs;
         npmlock2nix = pkgs.callPackage sources.npmlock2nix { };
         treefmt-nix = import sources.treefmt-nix;

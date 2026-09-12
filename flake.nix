@@ -9,13 +9,21 @@
     npmlock2nix.flake = false;
   };
 
-  outputs = { self, nixpkgs, npmlock2nix, treefmt-nix, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      npmlock2nix,
+      treefmt-nix,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
           (final: prev: {
+            # Legacy npmlock2nix argument name; use nixpkgs' current Node LTS.
             nodejs-16_x = final.nodejs;
             npmlock2nix = pkgs.callPackage npmlock2nix { };
             treefmt-nix = import treefmt-nix;

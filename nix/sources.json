@@ -18,7 +18,7 @@
         "owner": "nix-community",
         "repo": "npmlock2nix",
         "rev": "4d9060afbaa5f57ee0b8ef11c7044ed287a7d302",
-        "sha256": "1cba2vpqwj8bq3vs7vb0dbp88n6g6qh2fimw3jywksfy94xaifsk",
+        "sha256": "0zmfbc664vligmc1gmahf1ppcxpmrb02kbdccqfpamf7z1ykg5x8",
         "type": "tarball",
         "url": "https://github.com/nix-community/npmlock2nix/archive/4d9060afbaa5f57ee0b8ef11c7044ed287a7d302.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
@@ -30,7 +30,7 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
-        "sha256": "1y27garxygghyyawzczrrg0n4brj36jdh82c2isd5b1b4narw37x",
+        "sha256": "10g9bgkvjz234pfmyi5148bdx2096r1wwak31zhggrc46jq448ar",
         "type": "tarball",
         "url": "https://github.com/numtide/treefmt-nix/archive/27b3b12a8e6375f28ebe122f07d230ca5459bbfa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
