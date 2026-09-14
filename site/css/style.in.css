@@ -3,13 +3,46 @@
 @plugin "daisyui" {
   themes:
     light --default,
-    dim --prefersdark;
+    night --prefersdark;
+}
+
+:root:has(input.theme-controller[value="light"]:checked),
+[data-theme="light"] {
+  --color-primary: #057ec1;
+  --color-primary-content: #ffffff;
+  --color-secondary: #05a7d3;
+  --color-secondary-content: #06234a;
+  --color-accent: #70effc;
+  --color-accent-content: #06234a;
+  --color-neutral: #0b2148;
+  --color-neutral-content: #f8fbff;
+  --color-info: #2e97ed;
+  --color-info-content: #071a38;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-primary: #057ec1;
+    --color-primary-content: #ffffff;
+    --color-secondary: #05a7d3;
+    --color-secondary-content: #06234a;
+    --color-accent: #70effc;
+    --color-accent-content: #06234a;
+    --color-neutral: #0b2148;
+    --color-neutral-content: #f8fbff;
+    --color-info: #2e97ed;
+    --color-info-content: #071a38;
+  }
 }
 
 .icon {
   width: 1em;
   height: 1em;
   fill: currentColor;
+}
+
+.theme-logo-dark {
+  display: none;
 }
 
 html {
@@ -67,7 +100,121 @@ html {
   max-inline-size: 100%;
 }
 
+.project-gallery {
+  scroll-padding-inline: 0.25rem;
+  scrollbar-width: thin;
+}
+
+.project-card {
+  position: relative;
+  inline-size: min(82vw, 22rem);
+  flex: none;
+  overflow: hidden;
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-box);
+  background: var(--color-base-200);
+  cursor: pointer;
+  text-align: start;
+  scroll-snap-align: start;
+}
+
+.project-open-indicator {
+  position: absolute;
+  inset: 0.9rem 0.9rem auto auto;
+  z-index: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  filter: drop-shadow(0 1px 3px rgb(0 0 0 / 70%));
+}
+
+.project-card img {
+  aspect-ratio: 4 / 3;
+  inline-size: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.project-card:hover img,
+.project-card:focus-visible img {
+  transform: scale(1.025);
+}
+
+.project-card figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(transparent, rgb(0 0 0 / 68%));
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.project-dialog-box {
+  inline-size: min(94vw, 72rem);
+  max-inline-size: none;
+  max-block-size: 94vh;
+}
+
+.project-dialog-image {
+  inline-size: 100%;
+  max-block-size: 72vh;
+  object-fit: contain;
+}
+
+.gallery-thumbnail {
+  inline-size: 4rem;
+  flex: none;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: var(--radius-field);
+  opacity: 0.65;
+}
+
+.gallery-thumbnail[aria-current="true"] {
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+.gallery-thumbnail img {
+  aspect-ratio: 4 / 3;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 40rem) {
+  .project-card {
+    inline-size: min(46vw, 24rem);
+  }
+}
+
+@media (min-width: 64rem) {
+  .project-card {
+    inline-size: calc((100% - 2rem) / 3);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  :root:not(:has(input.theme-controller[value="light"]:checked)) {
+    --color-base-100: oklch(30.857% 0.023 264.149);
+    --color-base-200: oklch(28.036% 0.019 264.182);
+    --color-base-300: oklch(26.346% 0.018 262.177);
+    --color-base-content: oklch(82.901% 0.031 222.959);
+  }
+
+  .theme-logo-light {
+    display: none;
+  }
+
+  .theme-logo-dark,
+  html:has(#themeController:checked) .theme-logo-light {
+    display: block;
+  }
+
+  html:has(#themeController:checked) .theme-logo-dark {
+    display: none;
+  }
+
   .starlink-wordmark {
     filter: invert(1);
   }
@@ -80,5 +227,9 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .project-card img {
+    transition: none;
   }
 }

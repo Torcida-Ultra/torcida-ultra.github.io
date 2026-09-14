@@ -4,17 +4,25 @@
   <div class="hero-content w-full flex-col gap-10 px-6 py-12 lg:flex-row-reverse lg:px-12 lg:py-16">
     <div class="flex w-full max-w-sm justify-center lg:w-2/5">
       <img
-        class="h-auto w-64 sm:w-72"
+        class="theme-logo-light h-auto w-64 sm:w-72"
         src="/images/simplistic-logo.svg"
         alt=""
         width="385"
         height="324"
       >
+      <img
+        class="theme-logo-dark h-auto w-64 sm:w-72"
+        src="/images/simplistic-logo-dark.png"
+        alt=""
+        width="770"
+        height="648"
+        aria-hidden="true"
+      >
     </div>
     <div class="max-w-2xl lg:w-3/5">
       <div class="badge badge-primary badge-outline mb-4">Split i okolica</div>
       <h1 id="title" class="text-4xl leading-tight font-black sm:text-5xl">
-        Radovi za dom, apartman i poslovni prostor
+        Precizna izvedba za dom, apartman i poslovni prostor
       </h1>
       <p id="excerpt">
         Simplistic d.o.o. izvodi kamenopolagačke, keramičarske, instalaterske, fasaderske i izolaterske radove te suhu gradnju na području Splita.
@@ -30,29 +38,215 @@
   </div>
 </section>
 
-<section class="mt-10 overflow-hidden rounded-box bg-neutral text-neutral-content">
-  <div class="grid gap-8 px-6 py-10 lg:grid-cols-5 lg:px-10">
-    <div class="lg:col-span-2">
-      <p class="section-kicker text-current opacity-70">Iskustvo i znanje</p>
+<section id="radovi" class="scroll-mt-24 py-16">
+  <div class="mb-8 flex items-end justify-between gap-6">
+    <div>
+      <p class="section-kicker">Naši radovi</p>
+      <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Kvaliteta koja se vidi</h2>
+    </div>
+    <div class="hidden shrink-0 gap-2 sm:flex" aria-label="Pomicanje galerije">
+      <button class="btn btn-circle btn-ghost" type="button" data-project-scroll="-1" aria-label="Prethodne fotografije">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button class="btn btn-circle btn-ghost" type="button" data-project-scroll="1" aria-label="Sljedeće fotografije">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel project-gallery w-full gap-4 rounded-box bg-base-200 p-3 sm:p-4" data-project-gallery aria-label="Galerija izvedenih radova">
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/pool-sunset-2000.webp" data-project-alt="Bazen i popločana terasa uz more pri zalasku sunca" data-project-caption="Bazen i terasa uz more">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/pool-sunset-960.webp" alt="Bazen i popločana terasa uz more pri zalasku sunca" width="960" height="720" loading="lazy" decoding="async">
+        <figcaption>Bazen i terasa uz more</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/pool-overview-2000.webp" data-project-alt="Završena kamena terasa s bazenom" data-project-caption="Kamena terasa s bazenom">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/pool-overview-960.webp" alt="Završena kamena terasa s bazenom" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Kamena terasa s bazenom</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/pool-terrace-2000.webp" data-project-alt="Popločana terasa i bazen s pogledom prema moru" data-project-caption="Terasa i bazen s pogledom">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/pool-terrace-960.webp" alt="Popločana terasa i bazen s pogledom prema moru" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Terasa i bazen s pogledom</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/stone-entrance-2000.webp" data-project-alt="Vanjske kamene stepenice, staklena ograda i završena prilazna površina" data-project-caption="Kamene stepenice i prilaz">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/stone-entrance-960.webp" alt="Vanjske kamene stepenice, staklena ograda i završena prilazna površina" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Kamene stepenice i prilaz</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/stone-bench-2000.webp" data-project-alt="Vanjska klupa obložena velikim keramičkim pločama uz staklenu ogradu" data-project-caption="Obložena vanjska klupa">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/stone-bench-960.webp" alt="Vanjska klupa obložena velikim keramičkim pločama uz staklenu ogradu" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Obložena vanjska klupa</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-lighting-2000.webp" data-project-alt="Završena kupaonica s linearnom stropnom rasvjetom i tušem bez kade" data-project-caption="Kupaonica s linearnom rasvjetom">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-lighting-960.webp" alt="Završena kupaonica s linearnom stropnom rasvjetom i tušem bez kade" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Kupaonica s linearnom rasvjetom</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-wood-vanity-2000.webp" data-project-alt="Suvremena kupaonica sa staklenim tušem i drvenim ormarićem umivaonika" data-project-caption="Kupaonica s drvenim detaljima">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-wood-vanity-960.webp" alt="Suvremena kupaonica sa staklenim tušem i drvenim ormarićem umivaonika" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Kupaonica s drvenim detaljima</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-wide-2000.webp" data-project-alt="Završena kupaonica s prostranim tušem, umivaonikom i zidnim radijatorom" data-project-caption="Prostrana kupaonica s tušem">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-wide-960.webp" alt="Završena kupaonica s prostranim tušem, umivaonikom i zidnim radijatorom" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Prostrana kupaonica s tušem</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-glass-shower-2000.webp" data-project-alt="Kupaonica sa staklenom tuš-pregradom, zidnim umivaonikom i okruglim ogledalom" data-project-caption="Staklena tuš-pregrada">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-glass-shower-960.webp" alt="Kupaonica sa staklenom tuš-pregradom, zidnim umivaonikom i okruglim ogledalom" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Staklena tuš-pregrada</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/walk-in-shower-2000.webp" data-project-alt="Sivo-bijela kupaonica s otvorenim tušem i zidnim umivaonikom" data-project-caption="Otvoreni tuš i zidni umivaonik">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/walk-in-shower-960.webp" alt="Sivo-bijela kupaonica s otvorenim tušem i zidnim umivaonikom" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Otvoreni tuš i zidni umivaonik</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-stone-2000.webp" data-project-alt="Kupaonica s keramičkim oblogama izgleda kamena i staklenim tušem" data-project-caption="Keramičke obloge izgleda kamena">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-stone-960.webp" alt="Kupaonica s keramičkim oblogama izgleda kamena i staklenim tušem" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Keramičke obloge izgleda kamena</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/bathroom-light-2000.webp" data-project-alt="Svijetla kupaonica s kadom, zidnim sanitarnim elementima i keramičkim pločicama" data-project-caption="Svijetla kupaonica s kadom">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/bathroom-light-960.webp" alt="Svijetla kupaonica s kadom, zidnim sanitarnim elementima i keramičkim pločicama" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Svijetla kupaonica s kadom</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/compact-bathroom-2000.webp" data-project-alt="Kompaktna kupaonica sa sivim pločicama, staklenim tušem i zidnim sanitarnim elementima" data-project-caption="Kompaktna kupaonica">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/compact-bathroom-960.webp" alt="Kompaktna kupaonica sa sivim pločicama, staklenim tušem i zidnim sanitarnim elementima" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Kompaktna kupaonica</figcaption>
+      </figure>
+    </button>
+    <button class="carousel-item project-card" type="button" data-project-item data-project-src="/images/projects/tile-detail-2000.webp" data-project-alt="Detalj precizno spojenih rubova velikih keramičkih ploča" data-project-caption="Precizno spojeni keramički rubovi">
+      <svg class="project-open-indicator icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="/images/icons.svg#expand"></use>
+      </svg>
+      <figure>
+        <img src="/images/projects/tile-detail-960.webp" alt="Detalj precizno spojenih rubova velikih keramičkih ploča" width="720" height="960" loading="lazy" decoding="async">
+        <figcaption>Precizno spojeni keramički rubovi</figcaption>
+      </figure>
+    </button>
+  </div>
+
+  <p class="mt-2 text-sm opacity-60 sm:hidden">Povucite galeriju ulijevo ili udesno za više fotografija.</p>
+</section>
+
+<section class="mb-16 overflow-hidden rounded-box bg-neutral text-neutral-content">
+  <div class="px-6 py-10 lg:px-10">
+    <div>
+      <p class="section-kicker">Iskustvo i znanje</p>
       <h2 class="mt-2 text-3xl leading-tight font-bold sm:text-4xl">
         Iskustvo iz Njemačke. Preciznost u izvedbi.
       </h2>
     </div>
-    <div class="space-y-4 text-lg leading-relaxed lg:col-span-3">
+    <div class="mt-6 max-w-4xl space-y-4 text-lg leading-relaxed">
       <p>
-        Dugogodišnje iskustvo rada u njemačkom građevinarstvu temelj je našeg pristupa: tehničko znanje, poznavanje suvremenih standarda i rješenja te precizna izvedba.
+        Naš pristup temelji se na dugogodišnjem iskustvu rada u njemačkom građevinarstvu, gdje smo razvili preciznost, profesionalnost i poznavanje suvremenih standarda i rješenja.
       </p>
       <p class="opacity-80">
-        Savjetujemo vas pri odabiru materijala, sustava i proizvođača te preporučujemo rješenje koje odgovara objektu, zahtjevima i budžetu, s naglaskom na kvalitetu i dugotrajnost.
+        Savjetujemo vas pri odabiru materijala, sustava i proizvođača kako bi izvedba bila pouzdana, dugotrajna i primjerena vašem projektu.
       </p>
       <p class="font-semibold">
-        Od prvog razgovora do završetka radova komuniciramo na hrvatskom, njemačkom i engleskom jeziku.
+        Projekt dogovaramo na hrvatskom, njemačkom ili engleskom jeziku.
       </p>
     </div>
   </div>
 </section>
 
-<section id="usluge" class="py-16">
+<dialog class="modal" data-project-dialog aria-labelledby="project-dialog-title">
+  <div class="modal-box project-dialog-box overflow-hidden bg-base-200 p-0 text-base-content">
+    <div class="relative flex min-h-0 items-center justify-center bg-base-300">
+      <h2 id="project-dialog-title" class="sr-only">Pregled izvedenih radova</h2>
+      <img class="project-dialog-image" data-project-image alt="">
+      <form method="dialog" class="absolute top-3 right-3">
+        <button class="btn btn-circle btn-sm" type="submit" aria-label="Zatvori galeriju">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </form>
+      <button class="btn btn-circle absolute left-3" type="button" data-project-previous aria-label="Prethodna fotografija">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button class="btn btn-circle absolute right-3" type="button" data-project-next aria-label="Sljedeća fotografija">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex items-center justify-between gap-4 px-5 pt-4">
+      <p class="font-semibold" data-project-caption></p>
+      <p class="shrink-0 text-sm opacity-70" data-project-counter></p>
+    </div>
+    <div class="flex gap-2 overflow-x-auto px-5 pt-3 pb-5" data-project-thumbnails aria-label="Odabir fotografije"></div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button type="submit">Zatvori galeriju</button>
+  </form>
+</dialog>
+
+<section id="usluge" class="pb-16">
   <div class="mb-8 max-w-2xl">
     <p class="section-kicker">Što radimo</p>
     <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Više vrsta radova, jedan dogovor</h2>
@@ -62,37 +256,37 @@
   </div>
 
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Kamen i keramika</h3>
         <p>Postavljanje kamena i keramičkih obloga u interijeru i eksterijeru.</p>
       </div>
     </article>
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Elektroinstalacije</h3>
         <p>Elektroinstalaterski radovi pri uređenju i adaptaciji prostora.</p>
       </div>
     </article>
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Vodoinstalacije</h3>
         <p>Vodoinstalaterski zahvati za kupaonice, kuhinje i druge prostore.</p>
       </div>
     </article>
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Fasade i izolacija</h3>
         <p>Fasaderski i izolaterski radovi za zaštitu i obnovu objekta.</p>
       </div>
     </article>
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Suha gradnja</h3>
         <p>Pregradni zidovi, obloge i druga rješenja sustava suhe gradnje.</p>
       </div>
     </article>
-    <article class="card service-card bg-base-100 shadow-sm">
+    <article class="card service-card bg-base-200/50 shadow-sm">
       <div class="card-body">
         <h3 class="card-title">Ostali građevinski radovi</h3>
         <p>Dogovorite povezane zahvate prema potrebama vašeg prostora.</p>
@@ -131,6 +325,8 @@
     </div>
   </article>
 </section>
+
+<script src="/js/project-gallery.js" defer></script>
 
 <section class="rounded-box bg-primary px-6 py-10 text-primary-content sm:px-10">
   <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
