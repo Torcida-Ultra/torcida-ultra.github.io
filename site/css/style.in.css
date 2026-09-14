@@ -53,6 +53,20 @@ html {
   text-transform: uppercase;
 }
 
+#starlink-upit,
+#starlink-upit .card-body,
+#starlink-upit .fieldset,
+#starlink-upit .floating-label {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+#starlink-upit :is(.input, .select, .textarea) {
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
   .starlink-wordmark {
     filter: invert(1);
