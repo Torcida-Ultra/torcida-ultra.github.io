@@ -3549,24 +3549,14 @@ html {
   text-align: start;
   scroll-snap-align: start;
 }
-.project-card::after {
-  content: "Otvori";
+.project-open-indicator {
   position: absolute;
-  inset: 0.75rem 0.75rem auto auto;
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-base-content);
-  @supports (color: color-mix(in lab, red, red)) {
-    border: 1px solid color-mix(in oklab, var(--color-base-content) 20%, transparent);
-  }
-  border-radius: var(--radius-field);
-  background: var(--color-base-100);
-  @supports (color: color-mix(in lab, red, red)) {
-    background: color-mix(in oklab, var(--color-base-100) 88%, transparent);
-  }
-  color: var(--color-base-content);
-  font-size: 0.75rem;
-  font-weight: 600;
-  backdrop-filter: blur(8px);
+  inset: 0.9rem 0.9rem auto auto;
+  z-index: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  filter: drop-shadow(0 1px 3px rgb(0 0 0 / 70%));
 }
 .project-card img {
   aspect-ratio: 4 / 3;
