@@ -2414,6 +2414,9 @@
   .max-w-6xl {
     max-width: var(--container-6xl);
   }
+  .max-w-full {
+    max-width: 100%;
+  }
   .max-w-sm {
     max-width: var(--container-sm);
   }
@@ -2422,6 +2425,9 @@
   }
   .max-w-xs {
     max-width: var(--container-xs);
+  }
+  .min-w-0 {
+    min-width: 0px;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -2625,6 +2631,11 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
   :where(.space-y-10 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -3078,6 +3089,9 @@
     .lg\:items-start {
       align-items: flex-start;
     }
+    .lg\:px-10 {
+      padding-inline: calc(var(--spacing) * 10);
+    }
     .lg\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
     }
@@ -3128,6 +3142,15 @@ html {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+#starlink-upit, #starlink-upit .card-body, #starlink-upit .fieldset, #starlink-upit .floating-label {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+#starlink-upit :is(.input, .select, .textarea) {
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
 }
 @media (prefers-color-scheme: dark) {
   .starlink-wordmark {
